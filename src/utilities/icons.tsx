@@ -10,14 +10,12 @@ import { FaLightbulb } from "react-icons/fa6";
 import { MdDarkMode } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
 import { FaCircleInfo } from "react-icons/fa6";
-import { TiWarning } from "react-icons/ti";
+import { TiWarning } from "react-icons/ti"; 
 import { FaCheckCircle } from "react-icons/fa";
 import { SiCoffeescript } from "react-icons/si";
 import { MdEmail } from "react-icons/md";
-
-// const lgIcon:number = 50;
+ 
 const mdIcon:number = 30;
-// const smIcon:number = 20;
 
 export const icons = {
     iLightFill: <FaLightbulb size={mdIcon}/>,
