@@ -1,0 +1,3 @@
+run npm install
+run npx tsc --init
+  
