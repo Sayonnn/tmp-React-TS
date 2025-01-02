@@ -19,6 +19,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { SiHostinger } from "react-icons/si";
+import { FaGithub } from "react-icons/fa";
 
 const smIcon:number = 20;
 const mdIcon:number = 30;
@@ -50,6 +51,7 @@ export const icons = {
     iFacebook:<FaFacebook size={smIcon}/>,
     iGmail:<SiGmail size={smIcon}/>,
     iHostinger:<SiHostinger size={smIcon}/>,
+    iGithub:<FaGithub size={smIcon}/>,
 
 
 }

@@ -5,6 +5,7 @@ import Explore from '../components/Explore'
 import Info from '../components/Info'
 import s from './home.module.css'
 import Footer from '../components/Footer'
+import QAM from '../components/QAM'
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
       <Info/>
       <Explore/>
       <Footer/>
+      <QAM/>
     </main>
   )
 }
