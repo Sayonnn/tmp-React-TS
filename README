@@ -5,4 +5,7 @@ cuztomize design using tailwindcss
 
 ***whole setup did
 npm install tailwindcss postcss autoprefixer
+npm install typescript
+npx tsc --init
 npx tailwindcss init -p
+gsap with @gsap/react

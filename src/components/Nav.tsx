@@ -1,37 +1,49 @@
 import { icons } from "../utilities/icons";
 import Logo from "../assets/images/Logo_2.png";
-import { useCallback, useEffect,  useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 function Nav() {
   const [position, setPosition] = useState<boolean>(false);
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
   const [activeMenu, setActiveMenu] = useState<string>("Home");
+  const [showing, setShowing] = useState<boolean>(false)
   const navRef = useRef<HTMLElement | null>(null);
 
+  useGSAP(() => {
+    if (showing) {
+      gsap.fromTo(
+        "#nav",
+        {
+          y: -400, 
+          opacity: 0, 
+        },
+        {
+          y: 0, 
+          opacity: 1,
+          duration: 1, 
+          ease: "power3.out", 
+        }
+      );
+    }
+  }, [showing]);
+
   useEffect(() => {
+    setShowing(true); 
+
     const handleScroll = () => {
       setPosition(window.scrollY > 0);
+      if (window.scrollY === 0) {
+        setShowing(true); 
+      }else{
+setShowing(false)
+      }
     };
-
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 900) {
-        setIsExpanded(false);
-        document.body.style.overflow = "";
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -55,7 +67,7 @@ function Nav() {
         key={index}
         onClick={() => changeActiveMenu(menu)}
         className={`transition ease-in duration-200 cursor-pointer  p-2 hover:text-gray-50  rounded-md ${
-          activeMenu === menu ? "font-bold text-gray-50 bg-emerald-900/90 " : ""
+          activeMenu === menu ? "font-bold text-emerald-300 underline " : ""
         }`}
       >
         {menu}
@@ -67,9 +79,10 @@ function Nav() {
     <>
       <nav
         className={`md:px-40 md:gap-4 md:h-[100px] h-[70px] px-4 w-full z-50 transition ease-linear duration-150 fixed flex items-center justify-between ${
-          position && "bg-gray-900/60 backdrop-blur-lg"
+          position && "top-0 bg-gray-900/60 backdrop-blur-lg"
         }`}
         ref={navRef}
+        id="nav"
       >
         <span>
           <img

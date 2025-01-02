@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    scroll-behavior: smooth;
+    scroll-snap-type: mandatory;
+}
+
+*::-webkit-scrollbar {
+    width: 8px; /* Adjust scrollbar width */
+    height: 12px; /* For horizontal scrollbars, if applicable */
+}
+
+*::-webkit-scrollbar-button{
+    background:#242629;
+}
+
+*::-webkit-scrollbar-thumb{
+    background:rgb(27, 225, 116);
+    border-radius: 5px;
+}
+
+*::-webkit-scrollbar-track{
+    background:gray;
+}

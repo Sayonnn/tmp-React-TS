@@ -14,7 +14,13 @@ import { TiWarning } from "react-icons/ti";
 import { FaCheckCircle } from "react-icons/fa";
 import { SiCoffeescript } from "react-icons/si";
 import { MdEmail } from "react-icons/md";
- 
+import { FaLink } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
+import { SiHostinger } from "react-icons/si";
+
+const smIcon:number = 20;
 const mdIcon:number = 30;
 
 export const icons = {
@@ -38,6 +44,12 @@ export const icons = {
     iFContactFill:<BsTelephoneFill size={mdIcon}/>,
     iFDragonFill:<SiRedragon size={mdIcon}/>,
     iBDragonFill:<SiRedragon size={mdIcon}/>,
+
+    iLink:<FaLink size={smIcon}/>,
+    iLinkedIn:<FaLinkedin size={smIcon}/>,
+    iFacebook:<FaFacebook size={smIcon}/>,
+    iGmail:<SiGmail size={smIcon}/>,
+    iHostinger:<SiHostinger size={smIcon}/>,
 
 
 }
